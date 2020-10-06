@@ -118,7 +118,6 @@ class AuthActivity : AppCompatActivity() {
                         }
                     }
                 }
-
                 override fun onCancel() {
 
                 }
