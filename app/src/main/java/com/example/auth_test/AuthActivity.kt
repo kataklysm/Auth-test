@@ -25,6 +25,8 @@ import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_auth.*
 
 class AuthActivity : AppCompatActivity() {
@@ -43,9 +45,8 @@ class AuthActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putString("message", "Integración de firebase completa")
         analytics.logEvent("InitScreen", bundle)
-
+        notification()
         setup()
-
         session()
     }
 
@@ -63,7 +64,6 @@ class AuthActivity : AppCompatActivity() {
             showHome(email, ProviderType.valueOf(provider))
         }
     }
-
     private fun setup(){
         title = "Autenticación"
         btnSigUp.setOnClickListener {
@@ -113,7 +113,7 @@ class AuthActivity : AppCompatActivity() {
                                 showHome(it.result?.user?.email ?: "",ProviderType.FACEBOOK)
                             }else{
                                 showAlert()
-                                Toast.makeText(applicationContext,"error1", Toast.LENGTH_LONG).show()
+
                             }
                         }
                     }
@@ -129,7 +129,6 @@ class AuthActivity : AppCompatActivity() {
         }
 
     }
-
     private  fun showHome(email: String, provider: ProviderType){
 
         val homeIntent: Intent = Intent(this, HomeActivity::class.java).apply {
@@ -138,7 +137,6 @@ class AuthActivity : AppCompatActivity() {
         }
         startActivity(homeIntent)
     }
-
     private  fun showAlert(){
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
@@ -147,7 +145,18 @@ class AuthActivity : AppCompatActivity() {
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
+    private fun notification(){
+        FirebaseInstanceId.getInstance().instanceId.addOnCompleteListener{
+            it.result?.token?.let {
+                println("este es el valor del token del dispositivo: ${it}")
+            }
+        }
+        //Temas (topics)
 
+        FirebaseMessaging.getInstance().subscribeToTopic("Test")
+
+
+    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         callbackManager.onActivityResult(requestCode,resultCode,data)
         super.onActivityResult(requestCode, resultCode, data)
