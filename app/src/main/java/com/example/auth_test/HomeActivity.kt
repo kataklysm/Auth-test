@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -45,6 +46,9 @@ class HomeActivity : AppCompatActivity() {
             val prefs:SharedPreferences.Editor = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
             prefs.clear()
             prefs.apply()
+            if(provider == ProviderType.FACEBOOK.name){
+                LoginManager.getInstance().logOut()
+            }
             FirebaseAuth.getInstance().signOut()
             onBackPressed()
         }
