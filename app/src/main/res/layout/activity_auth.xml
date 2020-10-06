@@ -84,11 +84,28 @@
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:drawableStart="@mipmap/google"
-            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:text="@string/google"
             android:textAlignment="textStart"
             android:textColor="@android:color/darker_gray"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <Button
+            android:id="@+id/btnFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:drawableStart="@mipmap/facebook"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/facebook"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="24sp" />
     </LinearLayout>
 
 
