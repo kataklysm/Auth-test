@@ -9,7 +9,8 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 enum class ProviderType{
     BASIC,
-    GOOGLE
+    GOOGLE,
+    FACEBOOK
 }
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
