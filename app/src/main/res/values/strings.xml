@@ -6,5 +6,6 @@
     <string name="login">Login</string>
     <string name="log_out">Log Out</string>
     <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
     <string name="prefs_file">com.example.auth_test.PREFERENCE.FILE_KEY</string>
 </resources>
