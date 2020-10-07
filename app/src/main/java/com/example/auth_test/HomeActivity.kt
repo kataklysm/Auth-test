@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.android.synthetic.main.activity_home.*
 
 enum class ProviderType{
@@ -51,6 +52,13 @@ class HomeActivity : AppCompatActivity() {
             }
             FirebaseAuth.getInstance().signOut()
             onBackPressed()
+        }
+
+        btnError.setOnClickListener {
+            FirebaseCrashlytics.getInstance().setUserId(email)
+            FirebaseCrashlytics.getInstance().setCustomKey("Provider", provider)
+            //Forzado de error
+            throw RuntimeException("Forzado de error")
         }
 
     }

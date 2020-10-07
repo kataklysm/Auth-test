@@ -6,4 +6,5 @@
     <color name="login">#3F51B5</color>
     <color name="fondo">#ECEFF1</color>
     <color name="btnLogout">#F57C00</color>
+    <color name="btnError">#D32215</color>
 </resources>

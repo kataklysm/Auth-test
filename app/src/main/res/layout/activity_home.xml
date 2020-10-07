@@ -19,7 +19,7 @@
             android:id="@+id/tvEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="@string/email"
             android:textSize="24sp" />
 
         <Space
@@ -30,7 +30,7 @@
             android:id="@+id/tvProveedor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Proveedor"
+            android:text="@string/proveedor"
             android:textSize="24sp" />
 
         <Space
@@ -44,5 +44,17 @@
             android:text="@string/log_out"
             android:textSize="28sp"
             android:background="@color/btnLogout"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <Button
+            android:id="@+id/btnError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/forzar_error"
+            android:textSize="28sp"
+            android:background="@color/btnError"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
