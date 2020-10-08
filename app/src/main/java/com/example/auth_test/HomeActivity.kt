@@ -40,6 +40,7 @@ class HomeActivity : AppCompatActivity() {
         prefs.apply()
 
         //Remote Config
+
         btnError.visibility = View.INVISIBLE
         Firebase.remoteConfig.fetchAndActivate().addOnCompleteListener { task ->
             if (task.isSuccessful){
