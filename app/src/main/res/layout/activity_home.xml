@@ -32,6 +32,61 @@
             android:layout_height="wrap_content"
             android:text="@string/proveedor"
             android:textSize="24sp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <EditText
+            android:id="@+id/tvAddress"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/calle_numero_piso"
+            android:textSize="24sp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <EditText
+            android:id="@+id/tvPhone"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/telefono"
+            android:textSize="24sp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/guardar"
+            android:textSize="28sp"
+            android:background="#ffff"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <Button
+            android:id="@+id/btnGet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/recuperar"
+            android:textSize="28sp"
+            android:background="#ffff"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/eliminar"
+            android:textSize="28sp"
+            android:background="#ffff"/>
 
         <Space
             android:layout_width="match_parent"

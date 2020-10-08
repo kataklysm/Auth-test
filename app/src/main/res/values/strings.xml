@@ -13,4 +13,9 @@
     <string name="fb_login_protocol_scheme">fb344196403532065</string>
     <string name="proveedor">Proveedor</string>
     <string name="email">Email</string>
+    <string name="calle_numero_piso">Calle, número, piso</string>
+    <string name="telefono">Teléfono</string>
+    <string name="guardar">GUARDAR</string>
+    <string name="recuperar">RECUPERAR</string>
+    <string name="eliminar">ELIMINAR</string>
 </resources>
